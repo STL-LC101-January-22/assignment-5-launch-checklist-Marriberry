@@ -2,13 +2,15 @@
 
 window.addEventListener("load", function() {
     let form = document.querySelector("form");
+    let list = document.getElementById("faultyItems");
+    list.style.visibility = "hidden";
 
     form.addEventListener("submit", function(event) {
         let pilotNameInput = document.querySelector("input[name=pilotName]");
         let copilotNameInput = document.querySelector("input[name=copilotName]");
         let fuelLevelInput = document.querySelector("input[name=fuelLevel]");
         let cargoMassInput = document.querySelector("input[name=cargoMass]");
-        let list = document.getElementById("faultyItems");
+        
 
         if(validateInput(pilotNameInput.value) === "Empty" || validateInput(copilotNameInput.value) === "Empty" || validateInput(fuelLevelInput.value) === "Empty" || validateInput(cargoMassInput.value) === "Empty") {
             alert("All fields are required!");
