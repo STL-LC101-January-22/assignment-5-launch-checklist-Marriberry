@@ -32,9 +32,13 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
     if(fuelLevel < 10000 || cargoLevel > 10000) {
         if (fuelLevel < 10000) {
             document.getElementById("fuelStatus").innerHTML = "Fuel level too low for launch";
+        } else {
+            document.getElementById("fuelStatus").innerHTML = "Fuel level high enough for launch";
         }
         if (cargoLevel > 10000) {
             document.getElementById("cargoStatus").innerHTML = "Cargo mass too heavy for launch";
+        } else {
+            document.getElementById("cargoStatus").innerHTML = "Cargo mass low enough for launch";
         }
         document.getElementById("faultyItems").style.visibility = "visible";
         document.getElementById("launchStatus").innerHTML = "Shuttle Not Ready for Launch";
